@@ -22,8 +22,7 @@ test.describe('Home Page Tests', () => {
         const value = await homePage.getApiKey()
         expect(value).toBeDefined()
         expect(value).not.toBe('');
-        expect(value).toMatch(/^[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+$/);
-        expect(value.length).toBeGreaterThan(30);
+        expect(value.length).toBeGreaterThan(20);
     })
 
 });

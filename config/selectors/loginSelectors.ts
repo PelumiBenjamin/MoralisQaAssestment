@@ -4,7 +4,7 @@ export const LoginSelectors = {
     passwordInput: { role: 'textbox' as const, name: 'Password' },
     loginButton: { role: 'button' as const, name: 'Log In' },
     captchaText: 'text="Complete the captcha verification"',
-    acceptAllButton: 'button[name="ACCEPT ALL"]',
+    acceptAllButton: { role: "button" as const, name: "Accept All" },
     welcomeText: '#main_top > main > div > span',
     forgetPassword: 'data-testid="test-link-text"'
 };

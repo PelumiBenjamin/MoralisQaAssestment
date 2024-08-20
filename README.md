@@ -44,7 +44,7 @@ Step 3: Setup env
 Pass in values for apikey, username and password (This was shared in assestment submission)
 
 
-Step 3: Install Playwright Browsers
+Step 4: Install Playwright Browsers
 If this is your first time setting up Playwright, you need to install the Playwright browsers:
 
 pnpm exec playwright install
@@ -68,7 +68,7 @@ pnpm run test:e2e-Head
 Run All Tests
 To execute all tests (API and UI), use this command:
 
-pnpm run test
+pnpm run test:all
 
 Run Load Tests
 To execute load tests using K6, run:
@@ -87,7 +87,8 @@ Test Framework: Playwright with Typescript.
 
 Design Pattern: I used the Page Object Model (POM) pattern to structure the tests for better maintainability and readability. Each web page interaction is encapsulated in separate page classes, while the test cases reside in their respective test files.
 
-Challenge: While attempting to automate the login process on the platform (https://admin.moralis.io/login), I encountered CAPTCHAs that made the tests flaky.
+Challenge: There is a method to handle presence of cookie when it arises. 
+While attempting to automate the login process on the platform (https://admin.moralis.io/login), I encountered CAPTCHAs that made the tests flaky. 
 
 Solution: 
 
@@ -98,6 +99,8 @@ Due to the CAPTCHA i also make use of just one worker by configuring this in my 
 Also i set a unique timeout to cater for solving the captcha
 
 In the absence of the CAPTCHA, the tests run smoothly without manual intervention.
+
+NB - When creating nodes, the maximum that can be created is 2 nodes
 
 
 2. API Testing

@@ -13,13 +13,19 @@ export class LoginPage extends BasePage {
   async login(username: string, password: string) {
     const { emailInput, passwordInput, loginButton, captchaText, acceptAllButton } = LoginSelectors;
 
-    const acceptButton = this.page.locator(acceptAllButton);
+    const acceptButton = this.page.getByRole(acceptAllButton.role, {
+      name: acceptAllButton.name,
+    });
     const emailInputField = this.page.getByRole(emailInput.role, { name: emailInput.name });
     const passwordInputFIeld = this.page.getByRole(passwordInput.role, { name: passwordInput.name });
-    const login= this.page.getByRole(loginButton.role, { name: loginButton.name });
+    const login = this.page.getByRole(loginButton.role, { name: loginButton.name });
+
+    await this.page.waitForTimeout(5000);
 
     if (await acceptButton.isVisible()) {
-      await acceptButton.click();
+      await acceptButton.click({
+        force: true,
+      });
     }
 
     await emailInputField.fill(username);
