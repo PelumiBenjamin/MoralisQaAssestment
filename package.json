@@ -6,7 +6,7 @@
   "scripts": {
     "test": "playwright test",
     "test:e2e": "playwright test tests/e2e",
-    "test:e2eHead":"playwright test tests/e2e --headed",
+    "test:e2e-Head":"playwright test tests/e2e --headed",
     "test:api": "playwright test tests/api",
     "test:load": "k6 run loadTest/blockNumberLoadTest.js && k6 run loadTest/getBlockByNumberLoadTest.js && k6 run loadTest/getTransactionByHashLoadTest.js",
     "test:all": "npm run test:e2e && npm run test:api && npm run test:load"

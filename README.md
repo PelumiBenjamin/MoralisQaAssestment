@@ -60,9 +60,9 @@ To execute all API test cases, run the following command:
 pnpm run test:api
 
 Run UI Tests
-To run the full suite of UI tests, use:
+To run the full suite of UI tests in headed mode, use:
 
-pnpm run test:e2e
+pnpm run test:e2e-Head
 
 
 Run All Tests
